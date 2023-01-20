@@ -1,4 +1,4 @@
-<p>My APP</p>
+<!--<p>My APP</p>
 <ul>
   <li>
     <a routerLink="students">Estudiantes</a>
@@ -7,12 +7,25 @@
     <a routerLink="courses">Cursos</a>
   </li>
   <li>
-    <a routerLink="commissions">Comisiones</a>
-  </li>
-  <li>
-    <a routerLink="products">Productos</a>
-  </li>
-  <li>
     <a routerLink="users">Usuarios</a>
   </li>
 </ul>
+-->
+<div mat-card>
+ <div mat-card-container>
+  <button routerLink="root" >
+    <mat-icon>home</mat-icon>Home
+  </button>
+  <button routerLink="students">
+    <mat-icon>list</mat-icon>Estudiantes
+  </button>
+  <button routerLink="courses"mat-menu-item>
+    <mat-icon>list</mat-icon>Cursos
+  </button>
+  <button routerLink="users"mat-menu-item>
+    <mat-icon>list</mat-icon>Usuarios
+  </button>
+ </div>
+</div>
+  
+ 

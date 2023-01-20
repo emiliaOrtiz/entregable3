@@ -22,10 +22,6 @@ const routes: Routes = [
         loadChildren: () => import('./commissions/commissions.module').then((module) => module.CommissionsModule)
       },
       {
-        path: 'products',
-        loadChildren: () => import('./products/products.module').then((module) => module.ProductsModule)
-      },
-      {
         path: 'users',
         loadChildren: () => import('./users/users.module').then((module) => module.UsersModule),
       },

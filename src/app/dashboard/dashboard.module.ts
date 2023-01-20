@@ -10,6 +10,8 @@ import { HeaderComponent } from './layout/header/header.component';
 import { PageWrapperComponent } from './layout/page-wrapper/page-wrapper.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { NavMenuComponent } from './layout/nav-menu/nav-menu.component';
+import { MatIconModule } from '@angular/material/icon';
+
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { NavMenuComponent } from './layout/nav-menu/nav-menu.component';
     ReactiveFormsModule,
     MatSidenavModule,
     DashboardRoutingModule,
-    MatToolbarModule
+    MatToolbarModule,
+    MatIconModule,
   ]
 })
 export class DashboardModule { }

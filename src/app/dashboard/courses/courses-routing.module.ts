@@ -1,17 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { CoursesPageComponent } from './pages/courses-page/courses-page.component';
-import { CourseDetailPageComponent } from './pages/course-detail-page/course-detail-page.component';
+import { CursosComponent } from './pages/courses-page/courses-page.component';
+import { CursoDialogComponent } from './pages/course-detail-page/course-detail-page.component';
+
 
 const routes: Routes = [
   {
     path: '',
-    component: CoursesPageComponent
+    component: CursosComponent
   },
   {
     path: ':courseId',
-    component: CourseDetailPageComponent
+    component: CursoDialogComponent
   }
 ];
 
