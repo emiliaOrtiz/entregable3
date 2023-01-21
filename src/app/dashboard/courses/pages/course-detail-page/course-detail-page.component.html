@@ -1,9 +1,20 @@
 <h1 mat-dialog-title>Agregar Curso</h1>
 <hr>
 <div mat-dialog-content>
-   <p>Hello World</p>
+    <form class="Flex flex-column" [formGroup]="cursoForm">
+        <div class="mb-2">
+            <mat-form-field appearance="fill">
+                <mat-label>name:</mat-label>
+                <input [formControl]="nameControl" matInput>
+            </mat-form-field>
+        </div>
+        <mat-form-field appearance="fill">
+            <mat-label>profesor:</mat-label>
+            <input [formControl]="profesorControl" matInput>
+        </mat-form-field>
+    </form>
 </div>
 <div mat-dialog-actions>
-    <button mat-button (click)="close()">cancelar</button>
-    <button mat-button >Aceptar</button>
+    <button mat-button  (click)="close()">cancelar</button>
+    <button mat-button [mat-dialog-close]="cursoForm.value">Aceptar</button>
 </div>

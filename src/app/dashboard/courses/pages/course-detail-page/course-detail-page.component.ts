@@ -5,14 +5,15 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Cursos } from 'src/app/core/models/cursos';
 
 
+
 @Component({
   selector: 'app-curso-dialog',
   templateUrl: './course-detail-page.component.html',
   styleUrls: ['./course-detail-page.component.scss']
 })
 export class CursoDialogComponent {
-  nameControl=new FormControl('');
-  profesorControl=new FormControl('');
+  nameControl=new FormControl('',Validators.required);
+  profesorControl=new FormControl('',Validators.required);
   cursoForm=new FormGroup({
   name: this.nameControl,
   profesor:this.profesorControl,

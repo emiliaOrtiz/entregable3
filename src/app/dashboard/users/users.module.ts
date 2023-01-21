@@ -4,6 +4,9 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { UsersRoutingModule } from './users-routing.module';
 import { UsersPageComponent } from './pages/users-page/users-page.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 
 
@@ -16,6 +19,11 @@ import { UsersPageComponent } from './pages/users-page/users-page.component';
     UsersRoutingModule,
     MatTableModule,
     MatPaginatorModule,
+    MatCardModule,
+    MatIconModule,
+    MatTooltipModule,
+    MatIconModule,
+
   ]
 })
 export class UsersModule { }

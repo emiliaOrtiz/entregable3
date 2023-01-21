@@ -11,7 +11,7 @@ import { Subject, takeUntil } from 'rxjs';
 export class LoginPageComponent implements OnDestroy {
   public loading = false
   public form = new FormGroup({
-    email: new FormControl('michael.lawson@reqres.in', [Validators.required]),
+    email: new FormControl('michael.lawson@reqres.in', [Validators.required,Validators.email]),
     password: new FormControl('cityslicka', [Validators.required]),
   })
   private destroyed$ = new Subject();

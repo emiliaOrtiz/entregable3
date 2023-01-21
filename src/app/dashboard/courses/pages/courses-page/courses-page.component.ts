@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Cursos } from 'src/app/core/models/cursos';
 import { ServicioService } from 'src/app/dashboard/servicio/servicio.service';
 import { CursoDialogComponent } from '../course-detail-page/course-detail-page.component';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-cursos',
@@ -10,6 +11,8 @@ import { CursoDialogComponent } from '../course-detail-page/course-detail-page.c
   styleUrls: ['./courses-page.component.scss']
 })
 export class CursosComponent {
+
+public title:string="administrar cursos";
 
 addCurso() {
   const dialog=this.dialogService.open(CursoDialogComponent)
@@ -38,12 +41,31 @@ throw new Error('Method not implemented.');
   }
 
 removeCurso(curso:Cursos){
-  this.cursos=this.cursos.filter((element)=>element.id!==curso.id);
+  Swal.fire({
+    title: 'Are you sure?',
+    text: "You won't be able to revert this!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Yes, delete it!'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire(
+        'Deleted!',
+        `The Course ${curso.name}  has been deleted!`,
+        'success'
+      )
+      this.cursos=this.cursos.filter((element)=>element.id!==curso.id);
+    }
+  })
 }
 
   editCurso(curso:Cursos){
     const dialog=this.dialogService.open(CursoDialogComponent,{
-      data:this.cursos,
+      data:curso,
+      height: '400px',
+      width: '600px',
     })
     dialog.afterClosed().subscribe((data)=>{
         if(data){

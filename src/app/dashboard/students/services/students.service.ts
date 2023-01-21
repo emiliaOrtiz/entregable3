@@ -44,6 +44,14 @@ export class StudentsService {
     })
   }
 
+  totalStudents():number{
+    let total=0;
+    this.students.subscribe((valor)=>{
+      total=valor.length;
+    })
+    return total;
+  }
+
   removeStudent(id: number): void {
     this.students.pipe(take(1)).subscribe((students) => {
       this.students.next(students.filter((stu) => stu.id !== id))

@@ -12,10 +12,13 @@ import { Observable } from 'rxjs';
   styleUrls: ['./users-page.component.scss']
 })
 export class UsersPageComponent implements OnInit {
+createUser() {
+throw new Error('Method not implemented.');
+}
   public displayedColumns = ['id', 'avatar', 'first_name', 'last_name', 'email'];
   public users: User[] = [];
   public totalUsers: Observable<number>;
-  public perPage = 6;
+  public perPage = 4;
   public perPageOptions = [3, 6, 12, 18];
 
   constructor(private store: Store) {

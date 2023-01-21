@@ -7,6 +7,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { MatTableModule } from '@angular/material/table';
 import { StudentModalComponent } from './components/student-modal/student-modal.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 
@@ -22,6 +23,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     StudentsRoutingModule,
     SharedModule,
     MatTableModule,
+    MatPaginatorModule,
   ]
 })
 export class StudentsModule { }

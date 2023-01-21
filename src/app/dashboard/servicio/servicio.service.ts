@@ -34,13 +34,5 @@ public getCursosList():Cursos[]{
     return this.cursos;
 }
 
-  /*getStudentsById(id: number):Student{
-      this.students.forEach(s=>{
-        if(s.id==id){
-          return s;
-        }
-      })
-      
-    //return new Student(Number(id),'Taehyung','Kim',true)
-  }*/
+
 }

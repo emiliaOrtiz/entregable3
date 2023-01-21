@@ -11,7 +11,8 @@ import { PageWrapperComponent } from './layout/page-wrapper/page-wrapper.compone
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { NavMenuComponent } from './layout/nav-menu/nav-menu.component';
 import { MatIconModule } from '@angular/material/icon';
-
+import { MatDividerModule} from '@angular/material/divider';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,8 @@ import { MatIconModule } from '@angular/material/icon';
     DashboardRoutingModule,
     MatToolbarModule,
     MatIconModule,
+    MatDividerModule,
+    MatListModule,
   ]
 })
 export class DashboardModule { }

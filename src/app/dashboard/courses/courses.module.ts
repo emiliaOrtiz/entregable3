@@ -15,6 +15,7 @@ import { CursosComponent } from './pages/courses-page/courses-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule} from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatCardModule } from '@angular/material/card';
 
 
 
@@ -41,7 +42,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatListModule,
     MatExpansionModule,
     ReactiveFormsModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatCardModule,
 
   ],
   exports:[
