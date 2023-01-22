@@ -14,14 +14,17 @@ import { Cursos } from 'src/app/core/models/cursos';
 export class CursoDialogComponent {
   nameControl=new FormControl('',Validators.required);
   profesorControl=new FormControl('',Validators.required);
+  horarioControl=new FormControl('Mondays & fridays 20:00 p.m',Validators.required);
   cursoForm=new FormGroup({
   name: this.nameControl,
   profesor:this.profesorControl,
+  horario:this.horarioControl,
   });
 
   constructor(private readonly dialogRef:DialogRef,@Inject(MAT_DIALOG_DATA) public data: Cursos){
     if(data){
       this.cursoForm.patchValue(data);
+      
     }
     } 
    

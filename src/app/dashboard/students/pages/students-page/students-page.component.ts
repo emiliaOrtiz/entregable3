@@ -41,7 +41,10 @@ export class StudentsPageComponent implements OnDestroy {
   }
 
   createStudent() {
-    const dialog = this.dialogService.open(StudentModalComponent)
+    const dialog = this.dialogService.open(StudentModalComponent,{
+      height: '400px',
+      width: '600px',
+    })
     dialog.afterClosed().subscribe((data) => {
       if (data) {
         this.studentsService.createStudent({ firstName: data.firstName, lastName: data.lastName });

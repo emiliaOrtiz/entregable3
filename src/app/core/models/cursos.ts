@@ -5,6 +5,7 @@ export class Cursos{
         public profesor:string,
         public totalAlumn:number,
         public isActive:boolean,
+        public horario:string,
     ){}
 
     

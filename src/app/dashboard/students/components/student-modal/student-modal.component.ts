@@ -10,6 +10,7 @@ import { Student } from 'src/app/core/models';
   styleUrls: ['./student-modal.component.css']
 })
 export class StudentModalComponent {
+  title:string="Editar Alumno"
   firstNameControl = new FormControl('', [Validators.required])
   lastNameControl = new FormControl('', [Validators.required, Validators.email])
   studentForm = new FormGroup({
@@ -23,6 +24,7 @@ export class StudentModalComponent {
   ) {
     if (data) {
       this.studentForm.patchValue(data);
+      
     }
   }
 

@@ -18,8 +18,8 @@ export class ServicioService {
 
   ];
   cursos:Cursos[]=[
-    new Cursos(1,'Matematicas','Lucas kim',Number(40),true),
-    new Cursos(2,'Analisis matematico','Lucas kim',Number(43),true),
+    new Cursos(1,'Angular','Lucas tevez',Number(40),true,'Mondays & fridays 20:00 p.m'),
+    new Cursos(2,'React','pepe argento',Number(43),true,'Tuesday & westday 18:00 p.m'),
 
   ];
     

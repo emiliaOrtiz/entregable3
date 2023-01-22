@@ -15,13 +15,15 @@ export class CursosComponent {
 public title:string="administrar cursos";
 
 addCurso() {
-  const dialog=this.dialogService.open(CursoDialogComponent)
+  const dialog=this.dialogService.open(CursoDialogComponent,{
+    height: '400px',
+    width: '600px',
+  })
   dialog.afterClosed().subscribe((value)=>{
-   
     if(value){
       const lastId=this.servicio.students[this.cursos.length-1]?.id;
       
-      this.cursos=[...this.cursos,new Cursos(lastId+1,value.name,value.profesor,value.totalAlumn,true)]
+      this.cursos=[...this.cursos,new Cursos(lastId+1,value.name,value.profesor,value.totalAlumn,true,value.horario)]
     }
   }
     
@@ -33,7 +35,7 @@ throw new Error('Method not implemented.');
 }
  
   cursos:Cursos[]=this.servicio.getCursosList();
-  displayedColumns=['id','name','profesor','total','isActive','edit','delete']
+  displayedColumns=['id','name','profesor','total','isActive','horario','edit','delete']
 
   constructor(private readonly dialogService: MatDialog,
     private readonly servicio:ServicioService){
