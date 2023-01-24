@@ -8,6 +8,7 @@ import { MatTableModule } from '@angular/material/table';
 import { StudentModalComponent } from './components/student-modal/student-modal.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatChipsModule} from '@angular/material/chips';
 
 
 
@@ -24,6 +25,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     SharedModule,
     MatTableModule,
     MatPaginatorModule,
+    MatChipsModule,
   ]
 })
 export class StudentsModule { }

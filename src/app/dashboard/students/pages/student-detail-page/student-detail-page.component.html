@@ -1,11 +1,11 @@
 
 
-<div class="card bg-ligth flex align-items-center justify-content-between">
-  <div class="card-header">
-    <div class="card-title"></div> 
-    <h1>Detalle Del Alumno</h1>
-    <img class="profile-user-img img-fluid img-circle   text-center" src="https://temank3.id/public/images/default.jpg" alt="" width="160px">
-  </div>
+<div class="card bg-ligth" style="width: 800px;">
+    <div class="card-header" style="align-items: center;">
+      <div class="card-title"></div> 
+      <h1>Detalle Del Alumno</h1>
+      <img class="profile-user-img img-fluid img-circle   text-center" src="https://temank3.id/public/images/default.jpg" alt="" width="160px">
+    </div>
   <div class="card-body">
      <ng-container *ngIf="student;">
       <div class="mb-3">
@@ -29,9 +29,23 @@
       <div>
       </div>
       </ng-container>
-      <div *ngIf="student?.id==null" alert alert-danger role="alert">
+      <div class="alert alert-primary" *ngIf="student?.id==null">
           Estudiante no encontrado
       </div>
+      <div class="card bg-ligth">
+      <div class="card-header">
+        Inscripciones
+      </div>
+      <div class="card-content">
+        <mat-chip-listbox aria-label="Fish selection">
+          <mat-chip-option>Angular</mat-chip-option>
+          <mat-chip-option>React</mat-chip-option>
+          <mat-chip-option color="accent" selected>Vue</mat-chip-option>
+          <mat-chip-option color="warn">Javascript</mat-chip-option>
+        </mat-chip-listbox>
+      </div>
+      </div>
+      
   </div>
 
 
