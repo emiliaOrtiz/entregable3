@@ -4,21 +4,24 @@
     <form class="Flex flex-column" [formGroup]="cursoForm">
         <div class="mb-2">
             <mat-form-field appearance="fill">
-                <mat-label>name:</mat-label>
-                <input [formControl]="nameControl" matInput>
+                <mat-label>nombre:</mat-label>
+                <input [formControl]="nameControl" matInput required>
             </mat-form-field>
         </div>
         <mat-form-field appearance="fill">
             <mat-label>profesor:</mat-label>
-            <input [formControl]="profesorControl" matInput>
+            <input [formControl]="profesorControl" matInput required>
         </mat-form-field>
         <mat-form-field appearance="fill">
             <mat-label>Horario:</mat-label>
-            <input [formControl]="horarioControl" matInput>
+            <input [formControl]="horarioControl" matInput required>
         </mat-form-field>
     </form>
+    <div class="alert alert-danger" *ngIf="cursoForm.invalid" role="alert">
+        Los campos son obligatorios
+    </div>
 </div>
 <div mat-dialog-actions>
     <button mat-button  (click)="close()">cancelar</button>
-    <button mat-button [mat-dialog-close]="cursoForm.value">Aceptar</button>
+    <button type="submit" mat-button [mat-dialog-close]="cursoForm.value" [disabled]="cursoForm.invalid">Aceptar</button>
 </div>

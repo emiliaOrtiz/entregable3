@@ -13,13 +13,14 @@ import { Cursos } from 'src/app/core/models/cursos';
 })
 export class CursoDialogComponent {
   nameControl=new FormControl('',Validators.required);
-  profesorControl=new FormControl('',Validators.required);
-  horarioControl=new FormControl('Mondays & fridays 20:00 p.m',Validators.required);
+  profesorControl=new FormControl('',[Validators.required,Validators.minLength(3)]);
+  horarioControl=new FormControl('Mondays & fridays 20:00 p.m',[Validators.required,Validators.minLength(4)]);
   cursoForm=new FormGroup({
   name: this.nameControl,
   profesor:this.profesorControl,
   horario:this.horarioControl,
   });
+  resultado: string | undefined;
 
   constructor(private readonly dialogRef:DialogRef,@Inject(MAT_DIALOG_DATA) public data: Cursos){
     if(data){
@@ -27,7 +28,6 @@ export class CursoDialogComponent {
       
     }
     } 
-   
     
   close(
     ) {

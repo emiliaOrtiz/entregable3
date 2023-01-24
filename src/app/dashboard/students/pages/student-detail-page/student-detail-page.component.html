@@ -1,14 +1,13 @@
 
 
-
-<div class="card bg-ligth" style="width: 60rem;">
+<div class="card bg-ligth flex align-items-center justify-content-between">
   <div class="card-header">
     <div class="card-title"></div> 
     <h1>Detalle Del Alumno</h1>
     <img class="profile-user-img img-fluid img-circle   text-center" src="https://temank3.id/public/images/default.jpg" alt="" width="160px">
   </div>
   <div class="card-body">
-     <ng-container *ngIf="student;else elseTemplate">
+     <ng-container *ngIf="student;">
       <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label">Codigo identificador</label>
         <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="{{student.id}}" disabled>
@@ -21,69 +20,18 @@
           <div class="alert alert-success" role="alert">
             El alumno {{student.firstName}} esta <b>ACTIVO</b>
           </div>
-      </ng-container>
-      <ng-template>
-          <div class="alert alert-warning" role="alert">
-            El alumno {{student.firstName}} esta <b>INACTIVO</b>
-          </div>
-      </ng-template>
+        </ng-container>
+        <ng-template #elseTemplate>
+            <div class="alert alert-warning" role="alert">
+              El alumno {{student.firstName}} esta <b>INACTIVO</b>
+            </div>
+        </ng-template>
       <div>
       </div>
       </ng-container>
-      <ng-template #elseTemplate>
-        <div class="alert alert-danger" role="alert">
+      <div *ngIf="student?.id==null" alert alert-danger role="alert">
           Estudiante no encontrado
-        </div>
-      </ng-template>
-   
-</div>
-
-<!--
-  <mat-card>
-  <mat-card-header> 
-    <mat-card-title>
-      Detalle Del Alumno
-    </mat-card-title>
-  </mat-card-header>
-  <mat-card-content>
-    <h1>
-      <ng-container *ngIf="student;else elseTemplate">
-        Nombre Completo: <b>{{ student.firstName }} {{ student.lastName }}</b>
-        <ul>
-          Activo:
-            {{student.active}}
-        </ul>
-      </ng-container>
-      <ng-template #elseTemplate>
-        Estudiante no encontrado
-      </ng-template>
-    </h1>
-  </mat-card-content>
-</mat-card>
-
-
-<ng-container *ngIf="true">
-  <h1 class="mb-5"></h1>
-  <div class="grid">
-    <div class="col-8">
-      <form class="flex flex-column" [formGroup]="form">
-        <mat-form-field appearance="outline">
-          <mat-label>Nombre</mat-label>
-          <input formControlName="first_name" type="text" matInput placeholder="Complete con el nombre">
-          <mat-icon matSuffix>user</mat-icon>
-        </mat-form-field>
-        <mat-form-field appearance="outline">
-          <mat-label>Apellido</mat-label>
-          <input formControlName="last_name" type="text" matInput placeholder="Complete con el apellido">
-          <mat-icon matSuffix>user</mat-icon>
-        </mat-form-field>
-      </form>
-      <button  type="submit" mat-raised-button color="primary">Guardar</button>
-    </div>
-    <div class="col-4">
-      <img src="https://www.clipartmax.com/png/small/176-1763433_user-account-profile-avatar-person-male-icon-icon-user-account.png" alt="User">
-    </div>
+      </div>
   </div>
-</ng-container>
--->
+
 
