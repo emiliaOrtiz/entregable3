@@ -7,6 +7,7 @@ import { UsersPageComponent } from './pages/users-page/users-page.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatButtonModule } from '@angular/material/button';
 
 
 
@@ -23,6 +24,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatIconModule,
     MatTooltipModule,
     MatIconModule,
+    MatButtonModule,
+
 
   ]
 })

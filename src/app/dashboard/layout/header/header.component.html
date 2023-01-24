@@ -32,7 +32,8 @@
     <b *ngIf="user | async;else templateName">
       {{ (user | async)?.fullName }}
    </b>
-    <button (click)="authService.logOut()" color="primary" mat-flat-button>Cerrar sesión
+    <button (click)="authService.logOut()" color="primary" mat-flat-button>Logout
+      <mat-icon>logout</mat-icon>
     </button>
     <ng-template #templateName>
       <button routerLink="/auth/login" mat-flat-button color="primary">Iniciar sesión</button>

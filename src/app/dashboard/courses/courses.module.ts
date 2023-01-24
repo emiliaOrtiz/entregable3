@@ -19,13 +19,15 @@ import { MatCardModule } from '@angular/material/card';
 
 
 
+
  
 
 
 @NgModule({
   declarations: [
     CursoDialogComponent,
-    CursosComponent
+    CursosComponent,
+    
   ],
   imports: [
     CommonModule,

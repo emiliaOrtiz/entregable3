@@ -12,6 +12,7 @@ import { Subject, Subscription, takeUntil } from 'rxjs';
 export class StudentDetailPageComponent implements OnInit, OnDestroy {
   public student: Student | null = null
   private destroyed$ = new Subject()
+  title: string='Detalle del alumno';
   constructor(private readonly studentsService: StudentsService, private readonly activatedRoute: ActivatedRoute) {}
 
   ngOnDestroy(): void {

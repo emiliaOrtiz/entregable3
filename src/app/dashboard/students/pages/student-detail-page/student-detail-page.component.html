@@ -1,51 +1,69 @@
-
-
-<div class="card bg-ligth" style="width: 800px;">
-    <div class="card-header" style="align-items: center;">
-      <div class="card-title"></div> 
-      <h1>Detalle Del Alumno</h1>
-      <img class="profile-user-img img-fluid img-circle   text-center" src="https://temank3.id/public/images/default.jpg" alt="" width="160px">
+<div class="card bg-ligth">
+  <div class="card-header text-center" style="align-items: center;">
+    <img class="profile-user-img img-fluid img-circle   text-center" src="https://temank3.id/public/images/default.jpg"
+      alt="" width="160px">
+    <div class="card-title">
+      {{title|uppercase}}
     </div>
-  <div class="card-body">
-     <ng-container *ngIf="student;">
-      <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Codigo identificador</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="{{student.id}}" disabled>
-      </div>
-      <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Nombre Completo</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="{{student.firstName|uppercase}} {{student.lastName|uppercase}}" disabled>
-      </div>
-        <ng-container *ngIf="student.active==true;else elseTemplate">
-          <div class="alert alert-success" role="alert">
-            El alumno {{student.firstName}} esta <b>ACTIVO</b>
-          </div>
-        </ng-container>
-        <ng-template #elseTemplate>
-            <div class="alert alert-warning" role="alert">
-              El alumno {{student.firstName}} esta <b>INACTIVO</b>
-            </div>
-        </ng-template>
-      <div>
-      </div>
-      </ng-container>
-      <div class="alert alert-primary" *ngIf="student?.id==null">
-          Estudiante no encontrado
-      </div>
-      <div class="card bg-ligth">
-      <div class="card-header">
-        Inscripciones
-      </div>
-      <div class="card-content">
-        <mat-chip-listbox aria-label="Fish selection">
-          <mat-chip-option>Angular</mat-chip-option>
-          <mat-chip-option>React</mat-chip-option>
-          <mat-chip-option color="accent" selected>Vue</mat-chip-option>
-          <mat-chip-option color="warn">Javascript</mat-chip-option>
-        </mat-chip-listbox>
-      </div>
-      </div>
-      
   </div>
+  <div class="card-body">
+    <div class="container px-4">
+      <div class="row gx-5">
+        <div class="col">
+          <div class="p-3">
+            <ng-container *ngIf="student;">
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Codigo identificador</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="{{student.id}}"
+                  disabled>
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Nombre Completo</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1"
+                  placeholder="{{student.firstName|uppercase}} {{student.lastName|uppercase}}" disabled>
+              </div>
+              <ng-container *ngIf="student.active==true;else elseTemplate">
+                <div class="alert alert-success" role="alert">
+                  El alumno {{student.firstName}} esta <b>ACTIVO</b>
+                </div>
+              </ng-container>
+              <ng-template #elseTemplate>
+                <div class="alert alert-warning" role="alert">
+                  El alumno {{student.firstName}} esta <b>INACTIVO</b>
+                </div>
+              </ng-template>
+              <div>
+              </div>
+            </ng-container>
+          </div>
+        </div>
+        <div class="col">
+          <div class="p-3">
+            <ng-container *ngIf="student;else elseOption">
+              <div class="card bg-ligth">
+                <div class="card-header text-center">
+                  Inscripciones
+                </div>
+                <div class="card-content" style="padding: 1rem;">
+                  <mat-chip-listbox aria-label="Fish selection">
+                    <mat-chip-option>Angular</mat-chip-option>
+                    <mat-chip-option>React</mat-chip-option>
+                    <mat-chip-option color="accent" selected>Vue</mat-chip-option>
+                    <mat-chip-option color="warn">Javascript</mat-chip-option>
+                  </mat-chip-listbox>
+                </div>
+              </div>
+            </ng-container>
+            <ng-template #elseOption>
+              <div class="alert alert-primary">
+                Estudiante no encontrado
+              </div>
+            </ng-template>
+          </div>
+        </div>
 
 
+
+
+
+      </div>

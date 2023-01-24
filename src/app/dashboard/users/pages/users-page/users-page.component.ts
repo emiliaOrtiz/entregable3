@@ -12,10 +12,15 @@ import { Observable } from 'rxjs';
   styleUrls: ['./users-page.component.scss']
 })
 export class UsersPageComponent implements OnInit {
-createUser() {
+verUser(arg0: any) {
 throw new Error('Method not implemented.');
 }
-  public displayedColumns = ['id', 'avatar', 'first_name', 'last_name', 'email'];
+editarUser(arg0: any) {
+throw new Error('Method not implemented.');
+}
+
+
+  public displayedColumns = ['id', 'avatar', 'first_name', 'last_name', 'email','editar','delete','ver'];
   public users: User[] = [];
   public totalUsers: Observable<number>;
   public perPage = 4;
@@ -32,6 +37,12 @@ throw new Error('Method not implemented.');
         this.users = users;
       });
   }
+    deleteUser(id: any) {
+    throw null;
+    }
+    createUser() {
+    throw null;
+    }
 
   onPageChange(ev: PageEvent) {
     this.store.dispatch(loadUsers({ page: ev.pageIndex + 1, per_page: ev.pageSize }))

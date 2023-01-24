@@ -10,9 +10,9 @@ import { Subject, takeUntil } from 'rxjs';
 })
 export class LoginPageComponent implements OnDestroy {
   public loading = false
-  public form = new FormGroup({
+  public loginForm = new FormGroup({
     email: new FormControl('michael.lawson@reqres.in', [Validators.required,Validators.email]),
-    password: new FormControl('cityslicka', [Validators.required]),
+    password: new FormControl('cityslicka', [Validators.required,Validators.minLength(6),Validators.maxLength(8)]),
   })
   private destroyed$ = new Subject();
 
@@ -28,8 +28,8 @@ export class LoginPageComponent implements OnDestroy {
   login() {
     this.loading = true
     this.authService.login({
-      email: this.form.get('email')?.value || '',
-      password: this.form.get('password')?.value || ''
+      email: this.loginForm.get('email')?.value || '',
+      password: this.loginForm.get('password')?.value || ''
     }).subscribe((user) => {
       this.loading = false
       if (user) {
