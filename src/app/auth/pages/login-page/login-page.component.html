@@ -20,25 +20,15 @@
         <div class="text-center mb-3">
           <p>Sign up with:</p>
           <button type="button" class="btn btn-link btn-floating mx-1">
-            <i class="fab fa-facebook-f"></i>
+            <mat-icon>facebook</mat-icon>
           </button>
-  
-          <button type="button" class="btn btn-link btn-floating mx-1">
-            <i class="fab fa-google"></i>
-          </button>
-  
-          <button type="button" class="btn btn-link btn-floating mx-1">
-            <i class="fab fa-twitter"></i>
-          </button>
-  
-          <button type="button" class="btn btn-link btn-floating mx-1">
-            <i class="fab fa-github"></i>
-          </button>
-        </div>
+          <a href="#none" style="color:#6c238b;"><b>Olvide mi contraseña</b></a>
+        </div> 
       </form>
+      
     </mat-card-content>
     <mat-card-actions class="flex justify-content-end">
-      <button [disabled]="loading" mat-flat-button color="primary" (click)="login()">{{ loading ? 'Iniciando sesión' : 'Ingresar' }}</button>
+      <button  [disabled]="loading" mat-flat-button color="primary" (click)="login()">{{ loading ? 'Iniciando sesión' : 'Ingresar' }}</button>
     </mat-card-actions>
   </mat-card>
 </main>

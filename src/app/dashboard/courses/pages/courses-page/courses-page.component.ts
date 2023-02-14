@@ -24,6 +24,13 @@ addCurso() {
       const lastId=this.servicio.students[this.cursos.length-1]?.id;
       
       this.cursos=[...this.cursos,new Cursos(lastId+1,value.name,value.profesor,value.totalAlumn,true,value.horario)]
+      Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'El Curso fue Creado con Exito',
+        showConfirmButton: false,
+        timer: 1500
+      })
     }
   }
     
@@ -72,6 +79,13 @@ removeCurso(curso:Cursos){
     dialog.afterClosed().subscribe((data)=>{
         if(data){
          this.cursos=this.cursos.map((elem)=>elem.id===curso.id? {...elem,...data}:elem)
+         Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: 'El Curso fue Editado con Exito',
+          showConfirmButton: false,
+          timer: 1500
+        })
         }
 
       })

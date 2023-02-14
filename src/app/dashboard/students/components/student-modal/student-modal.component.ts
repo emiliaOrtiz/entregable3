@@ -12,11 +12,16 @@ import { Student } from 'src/app/core/models';
 export class StudentModalComponent {
   title:string="Editar Alumno"
   firstNameControl = new FormControl('', [Validators.required])
-  lastNameControl = new FormControl('', [Validators.required, Validators.email])
+  lastNameControl = new FormControl('', [Validators.required])
+  emailControl = new FormControl('', [Validators.required,Validators.email])
+  cursosControl=new FormControl()
   studentForm = new FormGroup({
     firstName: this.firstNameControl,
     lastName: this.lastNameControl,
+    email:this.emailControl,
+    cursos:this.cursosControl,
   });
+
 
   constructor(
     private readonly dialogRef: DialogRef,

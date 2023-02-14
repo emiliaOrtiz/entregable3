@@ -8,12 +8,14 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatButtonModule } from '@angular/material/button';
+import { UsersDetailPageComponent } from './users-detail-page/users-detail-page.component';
 
 
 
 @NgModule({
   declarations: [
-    UsersPageComponent
+    UsersPageComponent,
+    UsersDetailPageComponent
   ],
   imports: [
     CommonModule,

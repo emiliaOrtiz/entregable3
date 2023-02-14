@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth/guards/auth.guard';
+import { HomePageComponent } from './dashboard/home/pages/home-page/home-page.component';
 
 const routes: Routes = [
+  
   {
     path: 'dashboard',
     canActivate: [AuthGuard],
@@ -12,6 +14,7 @@ const routes: Routes = [
     path: 'auth',
     loadChildren: () => import('./auth/auth.module').then((module) => module.AuthModule)
   },
+ 
   {
     path: '**',
     redirectTo: 'auth'

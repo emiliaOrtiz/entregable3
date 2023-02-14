@@ -15,3 +15,20 @@ export const loadUsersFailure = createAction(
   '[User] Load Users Failure',
   props<{ error: any }>()
 );
+
+export const createUser=createAction(
+  '[User] Create User Success',
+  props<{data:User}>()
+);
+
+export const createUserSuccess=createAction(
+  '[User] Create User Success',
+  props<{data:User}>()
+);
+
+export const createUserFailure=createAction(
+  '[User] Create User Success',
+  props<{data:User}>()
+);
+
+export const resetUserState=createAction('[User]')

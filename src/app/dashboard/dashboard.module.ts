@@ -14,6 +14,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule} from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
 
+
 @NgModule({
   declarations: [
     DashboardComponent,
@@ -21,6 +22,7 @@ import { MatListModule } from '@angular/material/list';
     PageWrapperComponent,
     HeaderComponent,
     NavMenuComponent,
+    
   ],
   imports: [
     CommonModule,
@@ -32,6 +34,7 @@ import { MatListModule } from '@angular/material/list';
     MatIconModule,
     MatDividerModule,
     MatListModule,
+    
   ]
 })
 export class DashboardModule { }

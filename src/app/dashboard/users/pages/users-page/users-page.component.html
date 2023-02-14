@@ -36,6 +36,14 @@
             <th mat-header-cell *matHeaderCellDef>Email</th>
             <td mat-cell *matCellDef="let row">{{ row.email }}</td>
           </ng-container>
+          <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef>Status</th>
+            <td mat-cell *matCellDef="let row">ACTIVE</td>
+          </ng-container>
+          <ng-container matColumnDef="role">
+            <th mat-header-cell *matHeaderCellDef>Role</th>
+            <td mat-cell *matCellDef="let row">ADMIN</td>
+          </ng-container>
           <ng-container matColumnDef="editar">
             <th mat-header-cell *matHeaderCellDef>Edit</th>
             <td mat-cell *matCellDef="let row">
@@ -55,7 +63,7 @@
           <ng-container matColumnDef="ver">
             <th mat-header-cell *matHeaderCellDef>ver</th>
             <td mat-cell *matCellDef="let row">
-              <button (click)="verUser(row.id)" mat-icon-button color="primary">
+              <button [routerLink]="row.id" mat-icon-button color="primary">
                 <mat-icon>visibility</mat-icon>
               </button>
             </td>
@@ -67,8 +75,8 @@
     </mat-card-content>
     <mat-card-footer>
       <!-- lenght debe ser la cantidad total de usuarios en la base de datos -->
-<!-- pageSize debe ser la cantidad de usuarios que se muestran por pagina -->
-<!-- pageSizeOptions debe ser un array de la cantidad de usuarios que puedo pedir -->
+      <!-- pageSize debe ser la cantidad de usuarios que se muestran por pagina -->
+      <!-- pageSizeOptions debe ser un array de la cantidad de usuarios que puedo pedir -->
       <mat-paginator
       (page)="onPageChange($event)"
       [pageSizeOptions]="perPageOptions"

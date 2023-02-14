@@ -3,8 +3,10 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard.component';
 import { MyProfileComponent } from './my-profile/my-profile.component';
+import { HomePageComponent } from './home/pages/home-page/home-page.component';
 
 const routes: Routes = [
+
   {
     path: '',
     component: DashboardComponent,
@@ -17,10 +19,7 @@ const routes: Routes = [
         path: 'courses',
         loadChildren: () => import('./courses/courses.module').then((module) => module.CoursesModule)
       },
-      {
-        path: 'commissions',
-        loadChildren: () => import('./commissions/commissions.module').then((module) => module.CommissionsModule)
-      },
+      
       {
         path: 'users',
         loadChildren: () => import('./users/users.module').then((module) => module.UsersModule),
@@ -28,9 +27,14 @@ const routes: Routes = [
       {
         path: 'my-profile',
         component: MyProfileComponent,
+      },
+      {
+        path: 'home',
+        component: HomePageComponent,
+        loadChildren:()=> import('./home/home.module').then((module) => module.HomeModule)
       }
     ]
-  },
+  }
 ];
 
 @NgModule({

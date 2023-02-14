@@ -8,18 +8,18 @@ import { Cursos } from 'src/app/core/models/cursos';
 export class ServicioService {
 
   students: Student[]=[
-    new Student(1,'Taehyung','Kim',true),
-    new Student(2,'Namjoon','Kim',true),
-    new Student(3,'Junsu','Kim',true),
-    new Student(4,'Jaejoong','Kim',true),
-    new Student(5,'Leonardo','Dicaprio',true),
-    new Student(6,'Nick','Carter',true),
-    new Student(7,'Brian','Littrell',true),
-
+    new Student(1,'Taehyung','Kim',true,'tae.kim@gmail.com',['Angular','Vue']),
+    new Student(2,'Namjoon','Kim',false,'namjoon.kim@gmail.com',['Java','Web Design']),
+    new Student(3,'Junsu','Kim',false,'junsu.kim@gmail.com',['Angular']),
+    new Student(4,'Jaejoong','Kim',true,'jae.kim@gmail.com',['Vue','AWS Cloud']),
+    new Student(5,'Leonardo','Dicaprio',false,'',['Gamer Dev']),
+    new Student(6,'Nick','Carter',true,'nick.carter@gmail.com',['Java']),
+    new Student(7,'Brian','Littrell',true,'brian.littrell@gmail.com',['React','Vue'])
   ];
+
   cursos:Cursos[]=[
     new Cursos(1,'Angular','Lucas tevez',Number(40),true,'Mondays & fridays 20:00 p.m'),
-    new Cursos(2,'React','pepe argento',Number(43),true,'Tuesday & westday 18:00 p.m'),
+    new Cursos(2,'React','pepe argento',Number(43),false,'Tuesday & westday 18:00 p.m'),
 
   ];
     
@@ -29,7 +29,6 @@ export class ServicioService {
 public getStudentsList():Student[]{
   return this.students;
 }
-
 public getCursosList():Cursos[]{
     return this.cursos;
 }

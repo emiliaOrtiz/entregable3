@@ -19,8 +19,13 @@
               </div>
               <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Nombre Completo</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1"
+                <input class="form-control" id="exampleFormControlInput1"
                   placeholder="{{student.firstName|uppercase}} {{student.lastName|uppercase}}" disabled>
+              </div>
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Email de Contacto</label>
+                <input class="form-control" id="exampleFormControlInput1"
+                  placeholder="{{student.email|uppercase}}" disabled>
               </div>
               <ng-container *ngIf="student.active==true;else elseTemplate">
                 <div class="alert alert-success" role="alert">
@@ -45,11 +50,8 @@
                   Inscripciones
                 </div>
                 <div class="card-content" style="padding: 1rem;">
-                  <mat-chip-listbox aria-label="Fish selection">
-                    <mat-chip-option>Angular</mat-chip-option>
-                    <mat-chip-option>React</mat-chip-option>
-                    <mat-chip-option color="accent" selected>Vue</mat-chip-option>
-                    <mat-chip-option color="warn">Javascript</mat-chip-option>
+                  <mat-chip-listbox  *ngFor="let element of student.cursos" aria-label="Fish selection">
+                    <mat-chip style="color: blueviolet;">{{element}}</mat-chip>
                   </mat-chip-listbox>
                 </div>
               </div>
@@ -61,9 +63,4 @@
             </ng-template>
           </div>
         </div>
-
-
-
-
-
       </div>

@@ -39,6 +39,9 @@ export class UserEffects {
     );
   });
 
+
+
+
   constructor(private actions$: Actions, private httpClient: HttpClient) {}
 
   private getUsersFromApi(page: number, per_page: number): Observable<UsersListResponse> {

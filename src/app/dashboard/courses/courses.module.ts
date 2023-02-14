@@ -16,7 +16,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule} from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCardModule } from '@angular/material/card';
-
+import { MatSelectModule} from '@angular/material/select';
 
 
 
@@ -46,6 +46,7 @@ import { MatCardModule } from '@angular/material/card';
     ReactiveFormsModule,
     MatFormFieldModule,
     MatCardModule,
+    MatSelectModule,
 
   ],
   exports:[
@@ -60,6 +61,7 @@ import { MatCardModule } from '@angular/material/card';
     MatSidenavModule,
     MatListModule,
     MatExpansionModule,
+    
   ]
 })
 export class CoursesModule { }

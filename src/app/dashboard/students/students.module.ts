@@ -9,6 +9,8 @@ import { StudentModalComponent } from './components/student-modal/student-modal.
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatChipsModule} from '@angular/material/chips';
+import { MatTooltipModule} from '@angular/material/tooltip';
+import { MatCheckboxModule} from '@angular/material/checkbox';
 
 
 
@@ -26,6 +28,9 @@ import { MatChipsModule} from '@angular/material/chips';
     MatTableModule,
     MatPaginatorModule,
     MatChipsModule,
+    MatTooltipModule,
+    MatCheckboxModule
+    
   ]
 })
 export class StudentsModule { }

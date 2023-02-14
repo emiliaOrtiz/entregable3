@@ -9,9 +9,24 @@
       <mat-label>Apellido</mat-label>
       <input matInput [formControl]="lastNameControl">
     </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput [formControl]="emailControl">
+    </mat-form-field>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+    <mat-card>
+      <mat-card-title>Inscripciones</mat-card-title>
+      <mat-card-content>
+        <mat-chip-listbox  *ngFor="let element of cursosControl.value " aria-label="Fish selection">
+
+            <mat-chip>{{element}}</mat-chip>
+          </mat-chip-listbox>
+      </mat-card-content>
+    </mat-card>
+   
   </form>
 </div>
 <div mat-dialog-actions>
   <button mat-button (click)="close()">Cancelar</button>
-  <button type="submit" mat-button [mat-dialog-close]="studentForm.value">Aceptar</button>
+  <button type="submit" mat-button [mat-dialog-close]="studentForm.value" [disabled]="studentForm.invalid">Aceptar</button>
 </div>

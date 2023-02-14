@@ -1,0 +1,41 @@
+
+<div class="card bg-ligth">
+    <div class="card-header text-center" style="align-items: center;" *ngIf="user">
+      <img class="profile-user-img img-fluid img-circle   text-center" src="{{user.avatar}}"
+        alt="" width="160px">
+      <div class="card-title">
+        {{title|uppercase}}
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="container px-4">
+        <div class="row gx-5">
+          <div class="col">
+            <div class="p-3">
+              <ng-container *ngIf="user;">
+                <div class="mb-3">
+                  <label for="exampleFormControlInput1" class="form-label">Codigo identificador</label>
+                  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="{{user.id}}"
+                    disabled>
+                </div>
+                <div class="mb-3">
+                  <label for="exampleFormControlInput1" class="form-label">Nombre Completo</label>
+                  <input type="email" class="form-control" id="exampleFormControlInput1"
+                    placeholder="{{user.first_name|uppercase}} {{user.last_name|uppercase}}" disabled>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Nombre Completo</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1"
+                      placeholder="{{user.email|uppercase}} {{user.email|uppercase}}" disabled>
+                  </div>
+                <div>
+                </div>
+              </ng-container>
+              <ng-template #elseOption>
+                <div class="alert alert-primary">
+                 User no encontrado
+                </div>
+              </ng-template>
+            </div>
+          </div>
+        </div>
